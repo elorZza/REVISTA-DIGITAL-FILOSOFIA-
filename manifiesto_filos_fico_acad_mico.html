@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifiesto Filosófico Académico - Revista Digital</title>
+    <!-- Google Fonts for Academic Classic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: '#FBF8F1',
+                        'parchment-dark': '#F2ECC9',
+                        ink: '#1C1613',
+                        'ink-light': '#3D332D',
+                        burgundy: '#5B1E29',
+                        gold: '#B8860B',
+                        'gold-light': '#D4AF37',
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        garamond: ['EB Garamond', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Academic Styling */
+        body {
+            background-color: #FBF8F1;
+            color: #1C1613;
+            font-family: 'EB Garamond', serif;
+            background-image: radial-gradient(#e5deca 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+        }
+
+        .dropcap::first-letter {
+            font-family: 'Cinzel', serif;
+            float: left;
+            font-size: 3.8rem;
+            line-height: 0.8;
+            padding-top: 4px;
+            padding-right: 10px;
+            padding-left: 2px;
+            color: #5B1E29;
+            font-weight: 700;
+        }
+
+        .border-double-custom {
+            border-style: double;
+            border-width: 4px;
+            border-color: #B8860B;
+        }
+
+        .page-transition {
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        /* Paper fold shadow effect */
+        .magazine-page {
+            box-shadow: 0 10px 30px -5px rgba(28, 22, 19, 0.15), 0 0 5px rgba(0,0,0,0.05);
+            background: #FFFDF9;
+        }
+
+        /* Custom scrollbar for classic feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2ECC9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B8860B;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-burgundy selection:text-white">
+
+    <!-- Top Navigation / Index Bar -->
+    <header class="w-full bg-ink text-parchment border-b-2 border-gold sticky top-0 z-50 px-4 py-3 shadow-md">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="goToPage(0)">
+                <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="font-cinzel text-lg tracking-widest font-bold text-gold uppercase">Manifiesto Filosófico</span>
+            </div>
+
+            <!-- Page Tabs -->
+            <nav class="flex flex-wrap items-center space-x-1 md:space-x-4 text-xs md:text-sm font-cinzel">
+                <button onclick="goToPage(0)" id="nav-btn-0" class="px-3 py-1 hover:text-gold transition font-semibold border-b-2 border-transparent">I. Portada</button>
+                <button onclick="goToPage(1)" id="nav-btn-1" class="px-3 py-1 hover:text-gold transition font-semibold border-b-2 border-transparent">II. Introducción</button>
+                <button onclick="goToPage(2)" id="nav-btn-2" class="px-3 py-1 hover:text-gold transition font-semibold border-b-2 border-transparent">III. 5 Temas</button>
+                <button onclick="goToPage(3)" id="nav-btn-3" class="px-3 py-1 hover:text-gold transition font-semibold border-b-2 border-transparent">IV. Filósofos</button>
+                <button onclick="goToPage(4)" id="nav-btn-4" class="px-3 py-1 hover:text-gold transition font-semibold border-b-2 border-transparent">V. Reflexiones</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-5xl w-full mx-auto p-4 md:p-8">
+        
+        <!-- ================= PAGE 1: PORTADA ================= -->
+        <section id="page-0" class="page-section magazine-page rounded-sm p-6 md:p-12 border-2 border-gold/40 relative my-4 min-h-[78h] flex flex-col justify-between text-center">
+            
+            <!-- Academic Ornamental Frame -->
+            <div class="border-double-custom p-6 md:p-10 h-full flex flex-col justify-between items-center relative">
+                
+                <!-- Corner Flourishes -->
+                <div class="absolute top-2 left-2 text-gold font-cinzel text-xl">✦</div>
+                <div class="absolute top-2 right-2 text-gold font-cinzel text-xl">✦</div>
+                <div class="absolute bottom-2 left-2 text-gold font-cinzel text-xl">✦</div>
+                <div class="absolute bottom-2 right-2 text-gold font-cinzel text-xl">✦</div>
+
+                <div class="w-full">
+                    <p class="font-cinzel text-xs md:text-sm tracking-[0.3em] text-burgundy uppercase mb-2">Publicación Académica Semestral • Edición I</p>
+                    <div class="h-0.5 w-24 bg-gold mx-auto mb-6"></div>
+                    
+                    <h1 class="font-cinzel text-3xl md:text-6xl font-black text-ink uppercase tracking-wider mb-3">
+                        Manifiesto Filosófico
+                    </h1>
+                    <h2 class="font-playfair italic text-xl md:text-2xl text-ink-light font-medium">
+                        Compendio de Reflexiones, Corrientes y Diálogos de la Pensamiento Humano
+                    </h2>
+                </div>
+
+                <!-- Central Illustration / Geometric Symbol -->
+                <div class="my-8 relative flex justify-center items-center">
+                    <svg class="w-44 h-44 text-burgundy/80 stroke-current" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Athena's Owl / Geometric Philosophy Symbol -->
+                        <circle cx="100" cy="100" r="90" stroke="#B8860B" stroke-width="1.5" stroke-dasharray="4 2" />
+                        <circle cx="100" cy="100" r="82" stroke="#1C1613" stroke-width="1" />
+                        <path d="M100 25 L165 138 L35 138 Z" stroke="#5B1E29" stroke-width="1.5" />
+                        <circle cx="100" cy="100" r="35" stroke="#B8860B" stroke-width="1.5" />
+                        <path d="M65 100 Q100 50 135 100 Q100 150 65 100 Z" stroke="#1C1613" stroke-width="1.5" />
+                        <circle cx="100" cy="100" r="6" fill="#5B1E29" />
+                    </svg>
+                </div>
+
+                <div class="w-full">
+                    <p class="font-garamond italic text-lg md:text-xl text-ink mb-6 max-w-xl mx-auto">
+                        «El examen de la vida es el principio de la sabiduría; dudar de lo aprendido es el camino hacia la verdad.»
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+                        <button onclick="goToPage(1)" class="group relative inline-flex items-center px-8 py-3 overflow-hidden text-lg font-cinzel font-semibold text-parchment bg-burgundy rounded-none hover:bg-ink transition-all duration-300 shadow-md">
+                            <span>EXPLORAR REVISTA</span>
+                            <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-gold/30 flex justify-between items-center text-xs font-cinzel text-ink-light">
+                        <span>CÁTEDRA DE FILOSOFÍA</span>
+                        <span>PROYECTO ACADÉMICO INTEGRAL</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 2: INTRODUCCIÓN Y NOTA DEL PROYECTO ================= -->
+        <section id="page-1" class="page-section magazine-page rounded-sm p-6 md:p-12 border border-gold/30 my-4 hidden">
+            <div class="max-w-3xl mx-auto">
+                
+                <div class="text-center mb-8">
+                    <span class="font-cinzel text-xs tracking-widest text-gold uppercase font-bold">Sección I • Contexto y Propósito</span>
+                    <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-burgundy mt-1">Nota del Proyecto Academicista</h2>
+                    <div class="h-0.5 w-16 bg-gold mx-auto mt-3"></div>
+                </div>
+
+                <div class="prose prose-lg max-w-none text-ink text-justify leading-relaxed font-garamond text-lg md:text-xl">
+                    <p class="dropcap mb-6">
+                        Estimados alumnos y lectores de la presente edición: El proyecto <strong>"Manifiesto Filosófico Académico"</strong> nace como una invitación formal a la introspección teórica y a la estructuración del pensamiento crítico. En el marco de nuestro curso de Filosofía, hemos recorrido múltiples épocas y tradiciones conceptuales que intentan responder a las preguntas más profundas sobre la existencia, el conocimiento, la sociedad y la verdad.
+                    </p>
+
+                    <blockquote class="my-8 p-6 bg-parchment border-l-4 border-burgundy italic font-playfair text-ink-light text-xl">
+                        "La filosofía no es un cuerpo de doctrinas, sino una actividad: la aclaración lógica de los pensamientos."
+                    </blockquote>
+
+                    <h3 class="font-cinzel text-xl font-bold text-ink mt-8 mb-3">Objetivos del Ejercicio Filosófico:</h3>
+                    <ul class="list-disc pl-6 space-y-2 mb-8 font-garamond">
+                        <li><strong>Análisis Crítico:</strong> Seleccionar y problematizar cinco ejes fundamentales revisados durante el semestre (Mayéutica, Idealismo, Materialismo, Dialéctica y Marxismo).</li>
+                        <li><strong>Apropiación Conceptual:</strong> Relacionar las teorías de los grandes pensadores con las tensiones y dilemas del siglo XXI.</li>
+                        <li><strong>Expresión Escrita y Diálogo:</strong> Plasmar posturas argumentadas en la sección participativa al final de esta publicación, integrando la voz del estudiante al manifiesto colectivo.</li>
+                    </ul>
+
+                    <p class="mb-6">
+                        Les exhorto a recorrer los apartados temáticos y las síntesis biográficas de los autores clave con una postura inquisitiva. Al finalizar la lectura de las notas sintéticas, deberán ingresar su contribución formal en el <em>Registro de Reflexiones Alumnales</em>.
+                    </p>
+                </div>
+
+                <div class="mt-12 p-4 border-t border-b border-gold/40 flex justify-between items-center text-sm font-cinzel">
+                    <button onclick="goToPage(0)" class="text-burgundy hover:text-gold flex items-center gap-2">
+                        ← Regresar a Portada
+                    </button>
+                    <button onclick="goToPage(2)" class="bg-burgundy text-parchment px-4 py-2 hover:bg-ink transition flex items-center gap-2">
+                        Ver 5 Temas Temáticos →
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 3: 5 TEMAS FILOSÓFICOS ================= -->
+        <section id="page-2" class="page-section magazine-page rounded-sm p-6 md:p-10 border border-gold/30 my-4 hidden">
+            
+            <div class="text-center mb-6">
+                <span class="font-cinzel text-xs tracking-widest text-gold uppercase font-bold">Sección II • Ejes Conceptuales</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-burgundy mt-1">Cinco Núcleos del Pensamiento</h2>
+                <p class="font-playfair italic text-ink-light text-sm mt-1">Haga clic en cada pestaña para examinar el desarrollo del tema.</p>
+                <div class="h-0.5 w-20 bg-gold mx-auto mt-2"></div>
+            </div>
+
+            <!-- Tabs header -->
+            <div class="flex flex-wrap justify-center border-b border-gold/40 mb-8 gap-1 md:gap-2">
+                <button onclick="switchTopic(0)" id="topic-tab-0" class="topic-tab-btn font-cinzel px-3 py-2 text-xs md:text-sm font-bold border-b-2 border-burgundy text-burgundy transition">
+                    1. La Mayéutica
+                </button>
+                <button onclick="switchTopic(1)" id="topic-tab-1" class="topic-tab-btn font-cinzel px-3 py-2 text-xs md:text-sm font-bold border-b-2 border-transparent text-ink-light hover:text-burgundy transition">
+                    2. El Idealismo
+                </button>
+                <button onclick="switchTopic(2)" id="topic-tab-2" class="topic-tab-btn font-cinzel px-3 py-2 text-xs md:text-sm font-bold border-b-2 border-transparent text-ink-light hover:text-burgundy transition">
+                    3. El Materialismo
+                </button>
+                <button onclick="switchTopic(3)" id="topic-tab-3" class="topic-tab-btn font-cinzel px-3 py-2 text-xs md:text-sm font-bold border-b-2 border-transparent text-ink-light hover:text-burgundy transition">
+                    4. La Dialéctica
+                </button>
+                <button onclick="switchTopic(4)" id="topic-tab-4" class="topic-tab-btn font-cinzel px-3 py-2 text-xs md:text-sm font-bold border-b-2 border-transparent text-ink-light hover:text-burgundy transition">
+                    5. El Marxismo
+                </button>
+            </div>
+
+            <!-- Topic 0: Mayéutica -->
+            <div id="topic-content-0" class="topic-content prose max-w-none text-ink text-justify leading-relaxed">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                    <div class="md:col-span-2 space-y-4">
+                        <h3 class="font-cinzel text-2xl font-bold text-burgundy">La Mayéutica: El Arte de Dar a Luz la Verdad</h3>
+                        <p class="dropcap text-lg">
+                            Desarrollada por Sócrates, la mayéutica (del griego <em>maieutiké</em>, "arte de las parteras") plantea que el conocimiento no es algo que se inculca desde el exterior, sino una verdad que reside en el interior del alma de cada interlocutor y que requiere ser "parida" mediante el cuestionamiento metódico.
+                        </p>
+                        <p class="text-lg">
+                            A través del diálogo e interrogantes dirigidas, el filósofo desmonta las prejuicios y falsas certezas (ironía socrática) para guiar al sujeto a descubrir por sí mismo conceptos fundamentales como la justicia, la virtud y la belleza.
+                        </p>
+                        <div class="bg-parchment p-4 border-l-2 border-gold my-4">
+                            <h4 class="font-cinzel text-sm font-bold text-burgundy uppercase">Pregunta de Reflexión Alumnal:</h4>
+                            <p class="italic text-base text-ink-light">¿En qué medida el diálogo constante y la duda razonada en las redes sociales actuales se diferencian del ejercicio socrático de la mayéutica?</p>
+                        </div>
+                    </div>
+                    <div class="bg-parchment p-5 border border-gold/40 text-center">
+                        <svg class="w-24 h-24 mx-auto text-burgundy mb-3" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                            <circle cx="50" cy="50" r="40" stroke-width="1.5"/>
+                            <path d="M50 20 V80 M20 50 H80" stroke-width="1" stroke-dasharray="2 2"/>
+                            <circle cx="50" cy="50" r="20" stroke-width="1.5"/>
+                        </svg>
+                        <span class="font-cinzel text-xs font-bold text-ink block uppercase">Concepto Clave</span>
+                        <p class="text-sm font-garamond italic text-ink-light mt-1">El diálogo interlocutorio como partera del saber propio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 1: Idealismo -->
+            <div id="topic-content-1" class="topic-content prose max-w-none text-ink text-justify leading-relaxed hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                    <div class="md:col-span-2 space-y-4">
+                        <h3 class="font-cinzel text-2xl font-bold text-burgundy">El Idealismo: La Primacía de la Idea sobre la Materia</h3>
+                        <p class="dropcap text-lg">
+                            El Idealismo sostiene que la realidad fundamental es de naturaleza mental, espiritual o intelectiva. Desde Platón con su <em>Mundo de las Ideas</em> hasta el Idealismo Trascendental de Kant y el Absoluto de Hegel, esta corriente postula que los objetos percibidos por los sentidos son meros reflejos o construcciones derivadas de estructuras racionales.
+                        </p>
+                        <p class="text-lg">
+                            Para el idealismo clásico, las cosas físicas son contingentes y mutables, mientras que los conceptos e ideas absolutas poseen permanencia, universalidad y perfección intrínseca.
+                        </p>
+                        <div class="bg-parchment p-4 border-l-2 border-gold my-4">
+                            <h4 class="font-cinzel text-sm font-bold text-burgundy uppercase">Pregunta de Reflexión Alumnal:</h4>
+                            <p class="italic text-base text-ink-light">Si nuestro acceso al mundo exterior está mediado por la mente, ¿podemos afirmar que existe una realidad objetiva independiente del sujeto que la piensa?</p>
+                        </div>
+                    </div>
+                    <div class="bg-parchment p-5 border border-gold/40 text-center">
+                        <svg class="w-24 h-24 mx-auto text-burgundy mb-3" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                            <polygon points="50,15 85,80 15,80" stroke-width="1.5"/>
+                            <circle cx="50" cy="50" r="15" stroke-width="1.5"/>
+                        </svg>
+                        <span class="font-cinzel text-xs font-bold text-ink block uppercase">Concepto Clave</span>
+                        <p class="text-sm font-garamond italic text-ink-light mt-1">Las Formas puras inteligibles sustentan el mundo sensible.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 2: Materialismo -->
+            <div id="topic-content-2" class="topic-content prose max-w-none text-ink text-justify leading-relaxed hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                    <div class="md:col-span-2 space-y-4">
+                        <h3 class="font-cinzel text-2xl font-bold text-burgundy">El Materialismo: La Materia como Sustrato Primigenio</h3>
+                        <p class="dropcap text-lg">
+                            En contraposición al idealismo, la postura materialista fundamenta que todo cuanto existe —incluyendo la conciencia, el pensamiento y las estructuras sociales— es resultado de la materia en movimiento y sus interacciones físicas.
+                        </p>
+                        <p class="text-lg">
+                            Desde el atomismo antiguo de Demócrito y Epicuro hasta el materialismo científico moderno, la mente se entiende como un producto altamente organizado de procesos físicos y biológicos, rechazando la existencia de entidades inmateriales independientes.
+                        </p>
+                        <div class="bg-parchment p-4 border-l-2 border-gold my-4">
+                            <h4 class="font-cinzel text-sm font-bold text-burgundy uppercase">Pregunta de Reflexión Alumnal:</h4>
+                            <p class="italic text-base text-ink-light">¿Puede la explicación puramente físico-biológica agotar la comprensión de las emociones humanas y los valores éticos?</p>
+                        </div>
+                    </div>
+                    <div class="bg-parchment p-5 border border-gold/40 text-center">
+                        <svg class="w-24 h-24 mx-auto text-burgundy mb-3" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                            <rect x="25" y="25" width="50" height="50" stroke-width="1.5"/>
+                            <circle cx="35" cy="35" r="4" fill="#5B1E29"/>
+                            <circle cx="65" cy="35" r="4" fill="#5B1E29"/>
+                            <circle cx="50" cy="65" r="4" fill="#5B1E29"/>
+                        </svg>
+                        <span class="font-cinzel text-xs font-bold text-ink block uppercase">Concepto Clave</span>
+                        <p class="text-sm font-garamond italic text-ink-light mt-1">La realidad física objetiva precede y determina la conciencia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 3: Dialéctica -->
+            <div id="topic-content-3" class="topic-content prose max-w-none text-ink text-justify leading-relaxed hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                    <div class="md:col-span-2 space-y-4">
+                        <h3 class="font-cinzel text-2xl font-bold text-burgundy">La Dialéctica: El Dinamismo de la Contradicción</h3>
+                        <p class="dropcap text-lg">
+                            La dialéctica propone que la realidad y el pensamiento no son estáticos, sino procesos continuos de transformación motivados por contradicciones internas. Desde Heráclito ("todo fluye") hasta la sistematización hegeliana de Tesis, Antítesis y Síntesis.
+                        </p>
+                        <p class="text-lg">
+                            Cada afirmación genera en su seno su propia negación o conflicto, permitiendo elevar el conocimiento a una etapa superior que supera y a la vez preserva los momentos anteriores (el concepto de <em>Aufhebung</em>).
+                        </p>
+                        <div class="bg-parchment p-4 border-l-2 border-gold my-4">
+                            <h4 class="font-cinzel text-sm font-bold text-burgundy uppercase">Pregunta de Reflexión Alumnal:</h4>
+                            <p class="italic text-base text-ink-light">¿De qué forma las contradicciones morales y sociales contemporáneas impulsan el progreso de la sociedad?</p>
+                        </div>
+                    </div>
+                    <div class="bg-parchment p-5 border border-gold/40 text-center">
+                        <svg class="w-24 h-24 mx-auto text-burgundy mb-3" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                            <path d="M 20 50 A 30 30 0 0 1 80 50 A 30 30 0 0 1 20 50" stroke-width="1.5" stroke-dasharray="3 2"/>
+                            <path d="M 75 45 L 80 50 L 85 45" stroke-width="1.5"/>
+                            <path d="M 25 55 L 20 50 L 15 55" stroke-width="1.5"/>
+                        </svg>
+                        <span class="font-cinzel text-xs font-bold text-ink block uppercase">Concepto Clave</span>
+                        <p class="text-sm font-garamond italic text-ink-light mt-1">El devenir continuo a través de la síntesis de opuestos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 4: Marxismo -->
+            <div id="topic-content-4" class="topic-content prose max-w-none text-ink text-justify leading-relaxed hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                    <div class="md:col-span-2 space-y-4">
+                        <h3 class="font-cinzel text-2xl font-bold text-burgundy">El Marxismo: Transformación Social y Crítica Económica</h3>
+                        <p class="dropcap text-lg">
+                            El marxismo combina el materialismo con el método dialéctico para analizar la historia de la humanidad como la historia de las luchas de clases. Karl Marx postula que las relaciones de producción económica (la infraestructura) condicionan la cultura, las leyes y las ideas de una época (la superestructura).
+                        </p>
+                        <p class="text-lg">
+                            No se limita a interpretar el mundo, sino que propone su transformación activa mediante la superación de las contradicciones del sistema capitalista y la erradicación de la alienación humana.
+                        </p>
+                        <div class="bg-parchment p-4 border-l-2 border-gold my-4">
+                            <h4 class="font-cinzel text-sm font-bold text-burgundy uppercase">Pregunta de Reflexión Alumnal:</h4>
+                            <p class="italic text-base text-ink-light">«Los filósofos no han hecho más que interpretar de diversos modos el mundo; de lo que se trata es de transformarlo.» ¿Conserva esta máxima su vigencia hoy?</p>
+                        </div>
+                    </div>
+                    <div class="bg-parchment p-5 border border-gold/40 text-center">
+                        <svg class="w-24 h-24 mx-auto text-burgundy mb-3" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                            <path d="M 20 80 L 80 80 L 80 40 L 50 20 L 20 40 Z" stroke-width="1.5"/>
+                            <line x1="20" y1="50" x2="80" y2="50" stroke-width="1.5"/>
+                        </svg>
+                        <span class="font-cinzel text-xs font-bold text-ink block uppercase">Concepto Clave</span>
+                        <p class="text-sm font-garamond italic text-ink-light mt-1">Materialismo histórico y praxis emancipadora de la sociedad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-4 border-t border-gold/40 flex justify-between items-center text-sm font-cinzel">
+                <button onclick="goToPage(1)" class="text-burgundy hover:text-gold flex items-center gap-2">
+                    ← Regresar a Introducción
+                </button>
+                <button onclick="goToPage(3)" class="bg-burgundy text-parchment px-4 py-2 hover:bg-ink transition flex items-center gap-2">
+                    Ver Galería de Filósofos →
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PAGE 4: 5 FILÓSOFOS ================= -->
+        <section id="page-3" class="page-section magazine-page rounded-sm p-6 md:p-10 border border-gold/30 my-4 hidden">
+            
+            <div class="text-center mb-8">
+                <span class="font-cinzel text-xs tracking-widest text-gold uppercase font-bold">Sección III • Semblanzas teóricas</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-burgundy mt-1">Cinco Pensadores Fundamentales</h2>
+                <p class="font-playfair italic text-ink-light text-sm mt-1">Semblanzas biográficas, retratos y aportes trascendentales de la tradición filosófica.</p>
+                <div class="h-0.5 w-20 bg-gold mx-auto mt-2"></div>
+            </div>
+
+            <!-- Philosophers Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                
+                <!-- Socrates -->
+                <div class="bg-parchment p-5 border border-gold/40 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-full h-56 bg-parchment-dark flex items-center justify-center border border-gold/30 mb-4 overflow-hidden relative group">
+                            <img 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre_Ma13.jpg/480px-Socrates_Louvre_Ma13.jpg" 
+                                alt="Busto de Sócrates" 
+                                class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F2ECC9/5B1E29?text=S%C3%B3crates';"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute bottom-2 right-2 text-[10px] font-cinzel text-parchment bg-burgundy/90 px-2 py-0.5 border border-gold/40 shadow">470 a.C. – 399 a.C.</span>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy">Sócrates</h3>
+                        <p class="font-cinzel text-xs text-gold font-semibold mb-2">Atenas, Grecia Clásica</p>
+                        <blockquote class="italic text-sm font-garamond text-ink-light border-l-2 border-gold pl-2 my-2">
+                            "Solo sé que no sé nada."
+                        </blockquote>
+                        <p class="text-sm font-garamond text-ink leading-relaxed">
+                            Padre de la ética occidental. Centró el pensamiento filosófico en el examen del ser humano, la virtud y el conocimiento propio a través del método dialógico e inquisitivo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Platón -->
+                <div class="bg-parchment p-5 border border-gold/40 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-full h-56 bg-parchment-dark flex items-center justify-center border border-gold/30 mb-4 overflow-hidden relative group">
+                            <img 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg/480px-Plato_Silanion_Musei_Capitolini_MC1377.jpg" 
+                                alt="Busto de Platón" 
+                                class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F2ECC9/5B1E29?text=Plat%C3%B3n';"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute bottom-2 right-2 text-[10px] font-cinzel text-parchment bg-burgundy/90 px-2 py-0.5 border border-gold/40 shadow">427 a.C. – 347 a.C.</span>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy">Platón</h3>
+                        <p class="font-cinzel text-xs text-gold font-semibold mb-2">Atenas, Grecia Clásica</p>
+                        <blockquote class="italic text-sm font-garamond text-ink-light border-l-2 border-gold pl-2 my-2">
+                            "El cuerpo es la cárcel del alma."
+                        </blockquote>
+                        <p class="text-sm font-garamond text-ink leading-relaxed">
+                            Discípulo de Sócrates y fundador de la Academia. Formuló la teoría de las Ideas o Formas, explicando la alegoría de la caverna y la búsqueda del Bien Supremo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Immanuel Kant -->
+                <div class="bg-parchment p-5 border border-gold/40 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-full h-56 bg-parchment-dark flex items-center justify-center border border-gold/30 mb-4 overflow-hidden relative group">
+                            <img 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Immanuel_Kant_%2(painted_portrait%).jpg/480px-Immanuel_Kant_%2(painted_portrait%).jpg" 
+                                alt="Retrato de Immanuel Kant" 
+                                class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F2ECC9/5B1E29?text=Immanuel+Kant';"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute bottom-2 right-2 text-[10px] font-cinzel text-parchment bg-burgundy/90 px-2 py-0.5 border border-gold/40 shadow">1724 – 1804</span>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy">Immanuel Kant</h3>
+                        <p class="font-cinzel text-xs text-gold font-semibold mb-2">Königsberg, Prusia</p>
+                        <blockquote class="italic text-sm font-garamond text-ink-light border-l-2 border-gold pl-2 my-2">
+                            "¡Sapere aude! Ten el valor de servirte de tu propio entendimiento."
+                        </blockquote>
+                        <p class="text-sm font-garamond text-ink leading-relaxed">
+                            Artífice del Idealismo Trascendental y la ética del imperativo categórico. Reconcilió el empirismo y el racionalismo delimitando los alcances de la razón pura.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- G.W.F. Hegel -->
+                <div class="bg-parchment p-5 border border-gold/40 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-full h-56 bg-parchment-dark flex items-center justify-center border border-gold/30 mb-4 overflow-hidden relative group">
+                            <img 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Hegel_portrait_by_Schlesinger_1831.jpg/480px-Hegel_portrait_by_Schlesinger_1831.jpg" 
+                                alt="Retrato de G.W.F. Hegel" 
+                                class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F2ECC9/5B1E29?text=G.W.F.+Hegel';"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute bottom-2 right-2 text-[10px] font-cinzel text-parchment bg-burgundy/90 px-2 py-0.5 border border-gold/40 shadow">1770 – 1831</span>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy">G.W.F. Hegel</h3>
+                        <p class="font-cinzel text-xs text-gold font-semibold mb-2">Stuttgart, Alemania</p>
+                        <blockquote class="italic text-sm font-garamond text-ink-light border-l-2 border-gold pl-2 my-2">
+                            "Lo que es racional es real, y lo que es real es racional."
+                        </blockquote>
+                        <p class="text-sm font-garamond text-ink leading-relaxed">
+                            Máximo representante del idealismo absoluto. Desarrolló el sistema dialéctico para explicar el desarrollo de la historia humana como la autorrealización del Espíritu (Geist).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Karl Marx -->
+                <div class="bg-parchment p-5 border border-gold/40 flex flex-col justify-between hover:shadow-md transition md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="w-full h-56 bg-parchment-dark flex items-center justify-center border border-gold/30 mb-4 overflow-hidden relative group">
+                            <img 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/480px-Karl_Marx_001.jpg" 
+                                alt="Retrato de Karl Marx" 
+                                class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F2ECC9/5B1E29?text=Karl+Marx';"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute bottom-2 right-2 text-[10px] font-cinzel text-parchment bg-burgundy/90 px-2 py-0.5 border border-gold/40 shadow">1818 – 1883</span>
+                        </div>
+                        <h3 class="font-cinzel text-xl font-bold text-burgundy">Karl Marx</h3>
+                        <p class="font-cinzel text-xs text-gold font-semibold mb-2">Tréveris, Alemania</p>
+                        <blockquote class="italic text-sm font-garamond text-ink-light border-l-2 border-gold pl-2 my-2">
+                            "La historia de todas las sociedades es la historia de la lucha de clases."
+                        </blockquote>
+                        <p class="text-sm font-garamond text-ink leading-relaxed">
+                            Pensador crítico, economista y sociólogo. Invirtió la dialéctica hegeliana para erigir el materialismo histórico, analizando la alienación y el modo de producción capitalista.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-gold/40 flex justify-between items-center text-sm font-cinzel">
+                <button onclick="goToPage(2)" class="text-burgundy hover:text-gold flex items-center gap-2">
+                    ← Regresar a 5 Temas
+                </button>
+                <button onclick="goToPage(4)" class="bg-burgundy text-parchment px-4 py-2 hover:bg-ink transition flex items-center gap-2">
+                    Ir al Foro de Reflexión Alumnal →
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PAGE 5: SECCIÓN INTERACTIVA DE ALUMNOS ================= -->
+        <section id="page-4" class="page-section magazine-page rounded-sm p-6 md:p-10 border border-gold/30 my-4 hidden">
+            
+            <div class="text-center mb-8">
+                <span class="font-cinzel text-xs tracking-widest text-gold uppercase font-bold">Sección IV • Expediente y Participación</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold text-burgundy mt-1">Expedientes de Reflexión Alumnal</h2>
+                <p class="font-playfair italic text-ink-light text-sm mt-1">Directorio de estudiantes y registro individualizado de sus reflexiones sobre los 5 temas.</p>
+                <div class="h-0.5 w-20 bg-gold mx-auto mt-2"></div>
+            </div>
+
+            <!-- Top Actions & Search Bar -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center mb-8 bg-parchment p-4 border border-gold/40">
+                <!-- Search input -->
+                <div class="md:col-span-7 relative">
+                    <label for="searchStudent" class="sr-only">Buscar Alumno</label>
+                    <input 
+                        type="text" 
+                        id="searchStudent" 
+                        oninput="filterStudents()"
+                        placeholder="🔍 Buscar alumno por nombre..." 
+                        class="w-full bg-white border border-gold/50 px-4 py-2 text-sm font-garamond text-ink focus:outline-none focus:border-burgundy"
+                    >
+                </div>
+                <!-- Add new reflection button trigger -->
+                <div class="md:col-span-5 flex justify-end">
+                    <button 
+                        onclick="toggleSubmissionModal(true)"
+                        class="w-full md:w-auto bg-burgundy text-parchment font-cinzel text-xs font-bold px-5 py-2.5 uppercase tracking-wider hover:bg-ink transition shadow flex items-center justify-center gap-2"
+                    >
+                        <span>+ Nueva Reflexión</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Students Roster Grid -->
+            <div class="mb-6">
+                <div class="flex justify-between items-center border-b border-gold/40 pb-2 mb-4">
+                    <h3 class="font-cinzel text-lg font-bold text-ink">
+                        Directorio de Alumnos Registrados
+                    </h3>
+                    <span id="studentCountBadge" class="font-cinzel text-xs text-gold bg-ink px-2.5 py-1">
+                        0 Alumnos
+                    </span>
+                </div>
+
+                <!-- Grid of Students -->
+                <div id="studentsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Dynamic Student Cards will be injected here -->
+                </div>
+            </div>
+
+            <div class="mt-10 pt-4 border-t border-gold/40 flex justify-between items-center text-sm font-cinzel">
+                <button onclick="goToPage(3)" class="text-burgundy hover:text-gold flex items-center gap-2">
+                    ← Regresar a Filósofos
+                </button>
+                <button onclick="goToPage(0)" class="bg-burgundy text-parchment px-4 py-2 hover:bg-ink transition flex items-center gap-2">
+                    Volver a la Portada ↺
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= MODAL: PERFIL Y REFLEXIONES DEL ALUMNO ================= -->
+    <div id="studentProfileModal" class="fixed inset-0 bg-ink/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+        <div class="bg-parchment border-2 border-gold max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl relative">
+            
+            <!-- Modal Header -->
+            <div class="bg-ink text-parchment p-5 border-b border-gold flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div id="modalAvatar" class="w-10 h-10 rounded-full bg-burgundy text-gold font-cinzel font-bold text-lg flex items-center justify-center border border-gold">
+                        AA
+                    </div>
+                    <div>
+                        <h3 id="modalStudentName" class="font-cinzel text-xl font-bold text-gold">Nombre del Alumno</h3>
+                        <p id="modalStudentStats" class="font-garamond text-xs text-parchment/80 italic">0 de 5 reflexiones completadas</p>
+                    </div>
+                </div>
+                <button onclick="closeStudentModal()" class="text-parchment hover:text-gold text-2xl font-bold px-2">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Modal Content / List of 5 Reflections -->
+            <div id="modalReflectionsContainer" class="p-6 overflow-y-auto space-y-6 flex-grow font-garamond">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-parchment-dark p-4 border-t border-gold/40 flex justify-end">
+                <button onclick="closeStudentModal()" class="bg-burgundy text-parchment font-cinzel text-xs font-bold px-6 py-2 uppercase hover:bg-ink transition">
+                    Cerrar Expediente
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= MODAL: FORMULARIO DE NUEVA REFLEXIÓN ================= -->
+    <div id="submissionModal" class="fixed inset-0 bg-ink/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm">
+        <div class="bg-parchment border-2 border-gold max-w-xl w-full p-6 shadow-2xl relative">
+            
+            <div class="flex justify-between items-center border-b border-gold/40 pb-3 mb-4">
+                <h3 class="font-cinzel text-xl font-bold text-burgundy">Registrar Nueva Reflexión</h3>
+                <button onclick="toggleSubmissionModal(false)" class="text-ink hover:text-burgundy text-xl font-bold">✕</button>
+            </div>
+
+            <form id="reflectionForm" onsubmit="handleFormSubmit(event)" class="space-y-4 font-garamond">
+                <div>
+                    <label class="block font-cinzel text-xs font-bold uppercase text-ink-light mb-1" for="studentName">
+                        Nombre Completo del Alumno *
+                    </label>
+                    <input 
+                        type="text" 
+                        id="studentName" 
+                        required
+                        placeholder="Ej. Mateo Alexander Ruiz" 
+                        class="w-full bg-white border border-gold/50 px-3 py-2 text-ink focus:outline-none focus:border-burgundy text-base"
+                    >
+                    <p class="text-xs text-ink-light italic mt-1">Si ya te has registrado antes, escribe exactamente tu nombre para agregar reflexiones a tu expediente.</p>
+                </div>
+
+                <div>
+                    <label class="block font-cinzel text-xs font-bold uppercase text-ink-light mb-1" for="selectedTopic">
+                        Seleccione el Eje Temático *
+                    </label>
+                    <select 
+                        id="selectedTopic" 
+                        required
+                        class="w-full bg-white border border-gold/50 px-3 py-2 text-ink focus:outline-none focus:border-burgundy text-base"
+                    >
+                        <option value="" disabled selected>-- Seleccione un tema --</option>
+                        <option value="La Mayéutica">1. La Mayéutica</option>
+                        <option value="El Idealismo">2. El Idealismo</option>
+                        <option value="El Materialismo">3. El Materialismo</option>
+                        <option value="La Dialéctica">4. La Dialéctica</option>
+                        <option value="El Marxismo">5. El Marxismo</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-cinzel text-xs font-bold uppercase text-ink-light mb-1" for="reflectionText">
+                        Reflexión / Argumentación Personal *
+                    </label>
+                    <textarea 
+                        id="reflectionText" 
+                        rows="5" 
+                        required
+                        placeholder="Redacte aquí su análisis o postura sobre el tema seleccionado..." 
+                        class="w-full bg-white border border-gold/50 px-3 py-2 text-ink focus:outline-none focus:border-burgundy text-base"
+                    ></textarea>
+                </div>
+
+                <div class="flex justify-end space-x-3 pt-2">
+                    <button 
+                        type="button"
+                        onclick="toggleSubmissionModal(false)"
+                        class="bg-transparent border border-ink text-ink font-cinzel text-xs font-bold px-4 py-2 uppercase hover:bg-ink hover:text-parchment transition"
+                    >
+                        Cancelar
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="bg-burgundy text-parchment font-cinzel text-xs font-bold px-6 py-2 uppercase hover:bg-ink transition shadow"
+                    >
+                        Publicar en Expediente
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Editorial Footer -->
+    <footer class="w-full bg-ink text-parchment/70 border-t-2 border-gold text-center text-xs font-cinzel py-4 px-4 mt-8">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>© MANIFIESTO FILOSÓFICO ACADÉMICO • PROYECTO EDUCATIVO</span>
+            <span>CÁTEDRA DE FILOSOFÍA • EDICIÓN EDITORIAL</span>
+        </div>
+    </footer>
+
+    <!-- Application Script -->
+    <script>
+        // Page Navigation Logic
+        let currentPageIndex = 0;
+        const totalPages = 5;
+
+        function goToPage(pageIndex) {
+            if (pageIndex < 0 || pageIndex >= totalPages) return;
+
+            for (let i = 0; i < totalPages; i++) {
+                const page = document.getElementById(`page-${i}`);
+                const navBtn = document.getElementById(`nav-btn-${i}`);
+                
+                if (page) page.classList.add('hidden');
+                if (navBtn) {
+                    navBtn.classList.remove('text-gold', 'border-gold');
+                    navBtn.classList.add('border-transparent');
+                }
+            }
+
+            const activePage = document.getElementById(`page-${pageIndex}`);
+            const activeNavBtn = document.getElementById(`nav-btn-${pageIndex}`);
+
+            if (activePage) {
+                activePage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            if (activeNavBtn) {
+                activeNavBtn.classList.add('text-gold', 'border-gold');
+                activeNavBtn.classList.remove('border-transparent');
+            }
+
+            currentPageIndex = pageIndex;
+        }
+
+        // Topics Tab Switching Logic
+        function switchTopic(topicIndex) {
+            for (let i = 0; i < 5; i++) {
+                const content = document.getElementById(`topic-content-${i}`);
+                const tab = document.getElementById(`topic-tab-${i}`);
+
+                if (content) content.classList.add('hidden');
+                if (tab) {
+                    tab.classList.remove('border-burgundy', 'text-burgundy');
+                    tab.classList.add('border-transparent', 'text-ink-light');
+                }
+            }
+
+            const activeContent = document.getElementById(`topic-content-${topicIndex}`);
+            const activeTab = document.getElementById(`topic-tab-${topicIndex}`);
+
+            if (activeContent) activeContent.classList.remove('hidden');
+            if (activeTab) {
+                activeTab.classList.add('border-burgundy', 'text-burgundy');
+                activeTab.classList.remove('border-transparent', 'text-ink-light');
+            }
+        }
+
+        // ================= STUDENT REFLECTIONS & ROSTER SYSTEM =================
+        const STORAGE_KEY = 'manifiesto_filosofico_students_v2';
+        const ALL_TOPICS = ['La Mayéutica', 'El Idealismo', 'El Materialismo', 'La Dialéctica', 'El Marxismo'];
+
+        function getStoredData() {
+            try {
+                const data = localStorage.getItem(STORAGE_KEY);
+                return data ? JSON.parse(data) : getSampleInitialStudents();
+            } catch (e) {
+                return getSampleInitialStudents();
+            }
+        }
+
+        function saveStoredData(data) {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            } catch (e) {
+                console.error("Could not save to LocalStorage", e);
+            }
+        }
+
+        function getSampleInitialStudents() {
+            return [
+                {
+                    id: 'std_1',
+                    name: 'Sofia Montserrat Ruiz',
+                    reflections: [
+                        { topic: 'La Mayéutica', text: 'La mayéutica no es simplemente hacer preguntas, sino desarticular los sesgos. En la era digital, cuestionar lo impreciso resulta indispensable para dar a luz juicios propios.', date: '2026-10-12' },
+                        { topic: 'El Idealismo', text: 'Según Kant, aprehendemos la realidad según nuestras estructuras cognoscitivas. Las ideas no son castillos en el aire, sino marcos que configuran la percepción.', date: '2026-10-15' },
+                        { topic: 'El Materialismo', text: 'Las necesidades tangibles priman sobre las especulaciones teóricas. La historia humana comienza con la producción de los medios de vida.', date: '2026-10-18' },
+                        { topic: 'La Dialéctica', text: 'El conflicto no debe entenderse como destrucción, sino como el motor que hace avanzar la síntesis conceptual y social.', date: '2026-10-21' },
+                        { topic: 'El Marxismo', text: 'Entender la estructura económica nos permite analizar con sentido crítico la desigualdad y el trabajo alienado en las sociedades contemporáneas.', date: '2026-10-25' }
+                    ]
+                },
+                {
+                    id: 'std_2',
+                    name: 'Carlos Eduardo Mendoza',
+                    reflections: [
+                        { topic: 'La Mayéutica', text: 'Reconocer "solo sé que no sé nada" es el antídoto contra la dogmática moderna. Exige humildad intelectual en el aula.', date: '2026-10-14' },
+                        { topic: 'El Idealismo', text: 'Platón nos invita a buscar lo permanente en lo efímero. Aunque la sombra cambie, el concepto permanece.', date: '2026-10-17' },
+                        { topic: 'La Dialéctica', text: 'Tesis y antítesis chocan para superar los dogmas antiguos. Sin contradicción, el pensamiento se estanca.', date: '2026-10-22' }
+                    ]
+                },
+                {
+                    id: 'std_3',
+                    name: 'Valentina Ramírez Peña',
+                    reflections: [
+                        { topic: 'El Materialismo', text: 'La mente depende indispensablemente del soporte biológico y físico. El ser humano es parte orgánica de la naturaleza en transformación.', date: '2026-10-19' },
+                        { topic: 'El Marxismo', text: 'Transformar el mundo exige llevar la filosofía fuera de la academia hacia la acción ciudadana comprometida.', date: '2026-10-24' }
+                    ]
+                }
+            ];
+        }
+
+        function getInitials(name) {
+            return name
+                .split(' ')
+                .filter(part => part.length > 0)
+                .slice(0, 2)
+                .map(part => part[0].toUpperCase())
+                .join('');
+        }
+
+        function renderStudents(filterText = '') {
+            const students = getStoredData();
+            const grid = document.getElementById('studentsGrid');
+            const badge = document.getElementById('studentCountBadge');
+
+            if (!grid) return;
+
+            const filtered = students.filter(s => 
+                s.name.toLowerCase().includes(filterText.toLowerCase())
+            );
+
+            if (badge) {
+                badge.textContent = `${filtered.length} ${filtered.length === 1 ? 'Alumno' : 'Alumnos'}`;
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-ink-light italic font-garamond border border-dashed border-gold/40 p-6">
+                        No se encontraron alumnos coincidentes con la búsqueda.
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(student => {
+                const count = student.reflections.length;
+                const initials = getInitials(student.name);
+
+                return `
+                    <div 
+                        onclick="openStudentModal('${student.id}')"
+                        class="bg-parchment p-5 border border-gold/40 hover:border-burgundy shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group relative"
+                    >
+                        <div class="flex items-start space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-burgundy text-parchment font-cinzel font-bold text-lg flex items-center justify-center shrink-0 border border-gold group-hover:scale-105 transition-transform">
+                                ${initials}
+                            </div>
+                            <div>
+                                <h4 class="font-cinzel text-base font-bold text-ink group-hover:text-burgundy transition">
+                                    ${escapeHtml(student.name)}
+                                </h4>
+                                <span class="font-garamond text-xs text-ink-light italic">
+                                    Expediente Académico
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 border-t border-gold/20 pt-3">
+                            <div class="flex justify-between items-center text-xs font-cinzel">
+                                <span class="text-ink-light">Reflexiones completadas:</span>
+                                <span class="font-bold text-burgundy">${count} / 5</span>
+                            </div>
+                            <!-- Progress Bar -->
+                            <div class="w-full bg-parchment-dark h-2 rounded-none border border-gold/30 overflow-hidden">
+                                <div class="bg-burgundy h-full transition-all duration-500" style="width: ${(count / 5) * 100}%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-right">
+                            <span class="font-cinzel text-xs text-gold font-bold group-hover:underline">
+                                Ver las ${count} reflexiones →
+                            </span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filterStudents() {
+            const query = document.getElementById('searchStudent').value;
+            renderStudents(query);
+        }
+
+        function openStudentModal(studentId) {
+            const students = getStoredData();
+            const student = students.find(s => s.id === studentId);
+            if (!student) return;
+
+            document.getElementById('modalStudentName').textContent = student.name;
+            document.getElementById('modalAvatar').textContent = getInitials(student.name);
+            document.getElementById('modalStudentStats').textContent = `${student.reflections.length} de 5 reflexiones registradas`;
+
+            const container = document.getElementById('modalReflectionsContainer');
+
+            // Render each topic and student comment
+            container.innerHTML = ALL_TOPICS.map((topicName, idx) => {
+                const found = student.reflections.find(r => r.topic.toLowerCase() === topicName.toLowerCase());
+
+                if (found) {
+                    return `
+                        <div class="bg-white p-5 border-l-4 border-burgundy border-t border-r border-b border-gold/30 relative">
+                            <div class="flex justify-between items-center mb-2 border-b border-gold/20 pb-2">
+                                <span class="font-cinzel text-xs font-bold text-burgundy uppercase">
+                                    Tema ${idx + 1}: ${topicName}
+                                </span>
+                                <span class="text-xs text-ink-light italic">${found.date}</span>
+                            </div>
+                            <p class="font-garamond text-ink text-base leading-relaxed italic">
+                                «${escapeHtml(found.text)}»
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="bg-parchment-dark/50 p-4 border border-dashed border-gold/40 text-center text-ink-light italic">
+                            <span class="font-cinzel text-xs font-bold uppercase block text-gold mb-1">
+                                Tema ${idx + 1}: ${topicName}
+                            </span>
+                            Pendiente de reflexión por parte del alumno.
+                        </div>
+                    `;
+                }
+            }).join('');
+
+            document.getElementById('studentProfileModal').classList.remove('hidden');
+        }
+
+        function closeStudentModal() {
+            document.getElementById('studentProfileModal').classList.add('hidden');
+        }
+
+        function toggleSubmissionModal(show) {
+            const modal = document.getElementById('submissionModal');
+            if (show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const nameInput = document.getElementById('studentName');
+            const topicInput = document.getElementById('selectedTopic');
+            const textInput = document.getElementById('reflectionText');
+
+            const name = nameInput.value.trim();
+            const topic = topicInput.value;
+            const text = textInput.value.trim();
+
+            if (!name || !topic || !text) return;
+
+            const students = getStoredData();
+            let student = students.find(s => s.name.toLowerCase() === name.toLowerCase());
+
+            if (!student) {
+                // Create new student entry
+                student = {
+                    id: 'std_' + Date.now(),
+                    name: name,
+                    reflections: []
+                };
+                students.push(student);
+            }
+
+            // Check if reflection for topic already exists and update or add
+            const existingTopicIdx = student.reflections.findIndex(r => r.topic.toLowerCase() === topic.toLowerCase());
+            const newReflection = {
+                topic: topic,
+                text: text,
+                date: new Date().toISOString().split('T')[0]
+            };
+
+            if (existingTopicIdx >= 0) {
+                student.reflections[existingTopicIdx] = newReflection;
+            } else {
+                student.reflections.push(newReflection);
+            }
+
+            saveStoredData(students);
+            renderStudents();
+            toggleSubmissionModal(false);
+
+            // Reset inputs
+            nameInput.value = '';
+            topicInput.value = '';
+            textInput.value = '';
+
+            // Open the student's profile modal immediately for confirmation
+            openStudentModal(student.id);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Initialize App on load
+        window.onload = function() {
+            goToPage(0);
+            renderStudents();
+        };
+    </script>
+</body>
+</html>
